@@ -1,0 +1,58 @@
+.modal {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.5s;
+}
+
+.modal.active {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.content {
+	width: 384px;
+	height: 536px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	padding: 50px;
+	background: #ffffff;
+	border-radius: 24px;
+	transform: scale(0.5);
+	transition: 0.4s all;
+}
+
+.content.active {
+	transform: scale(1);
+}
+
+.cancel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: #f2f2f2;
+	border-radius: 50%;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	transform: translate(35%, -35%);
+	cursor: pointer;
+}
+
+.cancel img {
+	width: 12px;
+	height: 12px;
+}
