@@ -4,14 +4,16 @@ import { useValidation } from './useValidation'
 export const useInput = (initialValue, validations) => {
 	const [value, setValue] = useState(initialValue)
 	const [isDirty, setDirty] = useState(false)
+	const [submitError, setSubmitError] = useState(false)
 	const valid = useValidation(value, validations)
-	const errorInput = isDirty && !valid.inputValid
+	const errorInput = (isDirty && !valid.inputValid) || submitError
 
 	const onChange = (e) => {
 		setValue(e.target.value)
+		setSubmitError(false)
 	}
 
-	const onBlure = (e) => {
+	const onBlure = () => {
 		setDirty(true)
 	}
 

@@ -6,7 +6,7 @@ export const useValidation = (value, validations) => {
 	const [onlyNumbersError, setOnlyNumbersError] = useState(false)
 	const [numberCharactersError, setNumberCharactersError] = useState(false)
 	const [inputValid, setInputValid] = useState(false)
-	const [typeError, setTyperError] = useState('')
+	const [typeError, setTyperError] = useState('This field in required')
 
 	useEffect(() => {
 		for (const validation in validations) {
@@ -48,7 +48,7 @@ export const useValidation = (value, validations) => {
 						setTyperError('This field in required')
 					}
 					break
-					
+
 				default:
 					break
 			}

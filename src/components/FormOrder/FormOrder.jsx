@@ -8,7 +8,11 @@ import Input from './Input'
 const FormOrder = ({ setModalActive }) => {
 	const dispatch = useDispatch()
 
-	const name = useInput('', { isEmpty: true, onlyLetters: true })
+	const name = useInput('', {
+		isEmpty: true,
+		onlyLetters: true,
+	})
+
 	const number = useInput('', {
 		isEmpty: true,
 		onlyNumbers: true,
@@ -17,24 +21,28 @@ const FormOrder = ({ setModalActive }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		dispatch(buyCard())
-		setModalActive(false)
 
-		console.log('Name:', name.value)
-		console.log('Number:', number.value)
+		if (checkValidation()) {
+			name.setSubmit(true)
+			number.setSubmit(true)
+		} else {
+			dispatch(buyCard())
+			setModalActive(false)
+
+			console.log('Name:', name.value)
+			console.log('Number:', number.value)
+		}
 	}
+
+	const checkValidation = () =>
+		!name.isDirty && name.isEmpty && !number.isDirty && number.isEmpty
 
 	return (
 		<form onSubmit={handleSubmit} className={styles.form}>
 			<Input name="name" item={name} type="text" placeholder="Name" />
 			<Input name="number" item={number} type="text" placeholder="Number" />
 
-			<Button
-				//валидація до кінція треба закінчити
-				disabled={!name.inputValid || !number.inputValid}
-				className={styles.button}
-				type="submit"
-			>
+			<Button onClick={checkValidation} className={styles.button} type="submit">
 				Order
 			</Button>
 		</form>
