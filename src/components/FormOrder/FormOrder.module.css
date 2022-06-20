@@ -1,0 +1,27 @@
+.form {
+	margin-top: 32px;
+}
+
+.button {
+	width: 288px;
+	position: relative;
+}
+
+.button:after {
+	content: url('../../assets/img/arrow-right.svg');
+	display: block;
+	width: 15px;
+	height: 15px;
+	fill: #fff;
+	position: absolute;
+	top: 50%;
+	left: 62%;
+	transform: translate(-50%, -62%);
+	transition: 0.5s;
+}
+
+.button:hover:after {
+	top: 50%;
+	left: 65%;
+	transform: translate(-50%, -65%);
+}
