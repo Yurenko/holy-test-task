@@ -5,7 +5,7 @@ import Button from '../Button/Button'
 import styles from './FormOrder.module.css'
 import Input from './Input'
 
-const FormOrder = ({ setModalActive }) => {
+const FormOrder = ({ selectedCard, setModalActive }) => {
 	const dispatch = useDispatch()
 
 	const name = useInput('', {
@@ -29,8 +29,14 @@ const FormOrder = ({ setModalActive }) => {
 			dispatch(buyCard())
 			setModalActive(false)
 
+			const user = {
+				user_name: name.value,
+				user_number: number.value,
+			}
+			
 			console.log('Name:', name.value)
 			console.log('Number:', number.value)
+			console.log('New order object ', Object.assign({ ...selectedCard }, user))
 		}
 	}
 

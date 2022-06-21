@@ -21,7 +21,6 @@ function App() {
 
 	const { isLoading, goods, selectedCard } = useSelector((state) => state.goods)
 
-
 	const handleClick = (id) => {
 		setModalActive(true)
 		dispatch(selectCard(id))
