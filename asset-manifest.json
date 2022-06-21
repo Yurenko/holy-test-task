@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/holy-test-task/static/css/main.623b59d6.css",
-    "main.js": "/holy-test-task/static/js/main.3b1bc1e9.js",
+    "main.js": "/holy-test-task/static/js/main.ccb975c2.js",
     "static/media/error.png": "/holy-test-task/static/media/error.6113071412906ba1bb21.png",
     "static/media/arrow-right.svg": "/holy-test-task/static/media/arrow-right.5932d47cf7e2b0caf255.svg",
     "index.html": "/holy-test-task/index.html",
     "main.623b59d6.css.map": "/holy-test-task/static/css/main.623b59d6.css.map",
-    "main.3b1bc1e9.js.map": "/holy-test-task/static/js/main.3b1bc1e9.js.map"
+    "main.ccb975c2.js.map": "/holy-test-task/static/js/main.ccb975c2.js.map"
   },
   "entrypoints": [
     "static/css/main.623b59d6.css",
-    "static/js/main.3b1bc1e9.js"
+    "static/js/main.ccb975c2.js"
   ]
 }
