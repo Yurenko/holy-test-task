@@ -22,10 +22,10 @@ const FormOrder = ({ setModalActive }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 
-		if (checkValidation()) {
-			name.setSubmit(true)
-			number.setSubmit(true)
-		} else {
+		if (name.isEmpty && number.isEmpty) {
+			name.setSubmitError(true)
+			number.setSubmitError(true)
+		} else if (checkValidation()) {
 			dispatch(buyCard())
 			setModalActive(false)
 
@@ -35,7 +35,7 @@ const FormOrder = ({ setModalActive }) => {
 	}
 
 	const checkValidation = () =>
-		!name.isDirty && name.isEmpty && !number.isDirty && number.isEmpty
+		!name.errorInput && name.value && !number.errorInput && number.value
 
 	return (
 		<form onSubmit={handleSubmit} className={styles.form}>

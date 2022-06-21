@@ -23,6 +23,7 @@ export const useInput = (initialValue, validations) => {
 		onBlure,
 		isDirty,
 		errorInput,
+		setSubmitError,
 		...valid,
 	}
 }

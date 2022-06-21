@@ -34,7 +34,7 @@ export const useValidation = (value, validations) => {
 				case 'numberCharacters':
 					if (value.length === validations[validation]) {
 						setNumberCharactersError(false)
-					} else if (value.length > 5) {
+					} else if (value.length > 0) {
 						setTyperError('Should contain 12 characters')
 						setNumberCharactersError(true)
 					}
